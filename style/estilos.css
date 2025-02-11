@@ -1,0 +1,45 @@
+/* Background del sitio. buscar otro color que no sea negro pelao xd solo necesito ver bien los colores xdon*/
+body{
+    background-color: black;
+}
+
+/* Clase Panel. Si cambiamos el width y el height solamente lo hacemos aqui */
+.panel{
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.panel:hover{
+    border: 1px solid white; /*quita este blanco, me da toc*/
+    box-shadow: inset 0px 0px 0px 1px white;
+    box-sizing: border-box;
+}
+/* Paneles del juego: rojo, azul, verde y amarillo. 
+cambiar los colores porque se ven absurdamente chillones */
+/* tambien hay que buscar como hacer el circulo del medio */
+.bottom-right-panel{
+    border-bottom-right-radius: 100%;
+    background-color: red;
+}
+.bottom-left-panel{
+    border-bottom-left-radius: 100%;
+    background-color: blue;
+}
+.top-right-panel{
+    border-top-right-radius: 100%; 
+    border-bottom-left-radius: -60%;
+    background-color: green;
+    
+}
+.top-left-panel{
+    border-top-left-radius: 100%;
+    background-color: yellow;
+    
+}
+
+/* Cambio de color para cuando se active el panel */
+.active{
+    opacity: 0.4;
+}
