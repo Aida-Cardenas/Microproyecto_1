@@ -44,7 +44,7 @@ const panelClicked = (panel) => {
         }
     } else {
         // perdiste
-        alert('jaja manco');
+        alert('perdiste :c');
     }
 };
 

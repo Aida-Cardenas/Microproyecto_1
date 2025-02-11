@@ -1,6 +1,6 @@
 /* Background del sitio. buscar otro color que no sea negro pelao xd solo necesito ver bien los colores xdon*/
 body{
-    background-color: black;
+    background-color: #2e323a;
 }
 
 /* Clase Panel. Si cambiamos el width y el height solamente lo hacemos aqui */
@@ -12,30 +12,29 @@ body{
 }
 
 .panel:hover{
-    border: 1px solid white; /*quita este blanco, me da toc*/
-    box-shadow: inset 0px 0px 0px 1px white;
+    border: 1px solid #f7f8fa; /*quita este blanco, me da toc*/
+    box-shadow: inset 0px 0px 0px 1px #f7f8fa;
     box-sizing: border-box;
 }
-/* Paneles del juego: rojo, azul, verde y amarillo. 
-cambiar los colores porque se ven absurdamente chillones */
+/* Paneles del juego: rojo, azul, verde y amarillo.
 /* tambien hay que buscar como hacer el circulo del medio */
 .bottom-right-panel{
     border-bottom-right-radius: 100%;
-    background-color: red;
+    background-color: #ff005d;
 }
 .bottom-left-panel{
     border-bottom-left-radius: 100%;
-    background-color: blue;
+    background-color: #0085b6;
 }
 .top-right-panel{
     border-top-right-radius: 100%; 
     border-bottom-left-radius: -60%;
-    background-color: green;
+    background-color: #00d49d;
     
 }
 .top-left-panel{
     border-top-left-radius: 100%;
-    background-color: yellow;
+    background-color: #fedf03;
     
 }
 
