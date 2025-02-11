@@ -11,33 +11,55 @@ const getRandomPanel = () => {
         bottomLeft, 
         bottomRight
     ]
-    return panels[parseInt(Math.random() * panels.length)]
+    return panels[parseInt(Math.random() * panels.length)];
 }
 
 // Constantes de la secuencia
-const sequence = [
-    getRandomPanel(),
-    getRandomPanel(),
-    getRandomPanel(),
-    getRandomPanel()
-];
+const sequence = [getRandomPanel()];
+let sequenceToGuess = [...sequence];
 
 const flash = (panel) => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         panel.className += ' active';
         setTimeout(() => {
             panel.className = panel.className.replace(' active','');
             setTimeout(() => {
                 resolve();
             }, 250);
-        }, 1000)
+        }, 700);
     });
 };
 
-const main = async () => {
-    for (let panel of sequence) {
-        await flash(panel);
+let canClick = false;
+const panelClicked = (panel) => {
+    if (!canClick) return;
+    const expectedPanel = sequenceToGuess.shift();
+    // lógica del juego
+    if (expectedPanel === panel) {
+        if (sequenceToGuess.length === 0) {
+            // nueva ronda
+            sequence.push(getRandomPanel());
+            sequenceToGuess = [...sequence];
+            startFlashing();
+        }
+    } else {
+        // perdiste
+        alert('jaja manco');
     }
 };
 
-main();
+const startFlashing = async () => {
+    canClick = false;
+    for (const panel of sequence) {
+        await flash(panel);
+    }
+    canClick = true;
+};
+
+// Asignar eventos de clic a los paneles
+topLeft.addEventListener('click', () => panelClicked(topLeft));
+topRight.addEventListener('click', () => panelClicked(topRight));
+bottomLeft.addEventListener('click', () => panelClicked(bottomLeft));
+bottomRight.addEventListener('click', () => panelClicked(bottomRight));
+
+startFlashing();
