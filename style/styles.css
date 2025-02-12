@@ -19,23 +19,17 @@ body{
 /* Paneles del juego: rojo, azul, verde y amarillo.
 /* tambien hay que buscar como hacer el circulo del medio */
 .bottom-right-panel{
-    border-bottom-right-radius: 100%;
     background-color: #ff005d;
 }
 .bottom-left-panel{
-    border-bottom-left-radius: 100%;
     background-color: #0085b6;
 }
 .top-right-panel{
-    border-top-right-radius: 100%; 
-    border-bottom-left-radius: -60%;
     background-color: #00d49d;
     
 }
 .top-left-panel{
-    border-top-left-radius: 100%;
-    background-color: #fedf03;
-    
+    background-color: #fedf03; 
 }
 
 /* Cambio de color para cuando se active el panel */
