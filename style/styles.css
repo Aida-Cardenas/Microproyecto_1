@@ -1,4 +1,4 @@
-/* Background del sitio. buscar otro color que no sea negro pelao xd solo necesito ver bien los colores xdon*/
+/* Background del sitio */
 body{
     background-color: #2e323a;
 }
@@ -12,7 +12,7 @@ body{
     margin: 0.5vw; /* espaciado de paneles*/
 };
 
-    /*Intento de fucking responsive ig*/
+    /*Intento de fucking responsive ig it works! aprobado por preparadores*/
     /* Telefonos*/
     @media (max-width: 600px) {
         .panel {
@@ -38,41 +38,118 @@ body{
     height: 100vh;
 }
 
+/*Cuando se le hace hover le sale un bordecito blanco. realmente opcional pero me ayuda visualmente im sorry*/
 .panel:hover{
     border: 1px solid #f7f8fa; /*quita este blanco, me da toc*/
     box-shadow: inset 0px 0px 0px 1px #f7f8fa;
     box-sizing: border-box;
 }
-/* Paneles del juego: rojo, azul, verde y amarillo.
-/* tambien hay que buscar como hacer el circulo del medio */
-.bottom-right-panel{
-    background-color: #ff005d;
-}
-.bottom-left-panel{
-    background-color: #0085b6;
-}
-.top-right-panel{
-    background-color: #00d49d;
-    
-}
-.top-left-panel{
-    background-color: #fedf03; 
-}
 
-/* Cambio de color para cuando se active el panel */
+/* Paneles del juego: rojo, azul, verde y amarillo. revisa si te gustan esos colores */
+/* tambien hay que buscar como hacer el circulo del medio */
+    .bottom-right-panel{
+        background-color: #ff005d;
+    }
+    .bottom-left-panel{
+        background-color: #0085b6;
+    }
+    .top-right-panel{
+        background-color: #00d49d;
+        
+    }
+    .top-left-panel{
+        background-color: #fedf03; 
+    }
+
+/* Cambio de color para cuando se active el panel. le puse opacidad pero realmente da igual wn*/
 .active{
     opacity: 0.4;
 }
 
-/* Popup de lose */
+/*POPUP IT FUCKING WORKS LMAOOOOOOOOOOOOOOO*/
 .popup {
-    display: none; /* popup oculto inicialmente */
-}
-
-/*Wea temporal de lose configurar esto pls cuando sea que decida funcionar*/
-.losePopup-content {
+    display: none; /* Oculto inicialmente */
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: #f7f8fa;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    z-index: 1000;
 }
+.losePopupContent {
+    text-align: center;
+}
+
+
+/* Botones de inicio y reiniciar juego */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #00d49d; /*Cambia este color si quieres porque realmente es horroroso*/
+    color: #f7f8fa;
+    transition: all 0.3s ease; /* animacion para que el hover no sea tan tieso */
+}
+
+/*hover del boton. puede cambiarse por una animacion pero eso te toca a ti*/
+button:hover {
+    background-color: #008f72;
+}
+
+/* Botón de reinicio centrado. no se por que no es responsive. revisa eso */
+#resetButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+    /* responsive botones - telefono */
+    @media (max-width: 600px) {
+        button {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+    }
+
+/* Popup de "perdiste" NO ES RESPONSIVE REVISA ESTO POFAVO */
+.popup {
+    display: none; /* para que esté oculto inicialmente */
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f7f8fa;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    width: 90%; /* para que se ajuste automaticamente a pantallas mas pequenas */
+    max-width: 400px; /* tamano maximo aunque puedes probar sin esto ig */
+    box-sizing: border-box;
+}
+.losePopupContent {
+    text-align: center;
+}
+
+/* Contador de puntos jeje */
+h2 {
+    text-align: center;
+    color: #f7f8fa;
+    font-size: 18px;
+    margin: 10px 0;
+}
+    /*intento de responsive pero creo que no furula*/
+    @media (max-width: 600px) {
+        h2 {
+            font-size: 16px;
+        }
+    }
+

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Cambiar nombre del titulo -->
-    <title>Document</title>
+    <title>Simon dice by Ricardo Baeta & Aida Cardenas seccion 3</title>
     <link href="style/styles.css" rel="stylesheet"/>
 </head>
 <body>
@@ -18,15 +18,29 @@
             <div  class="panel bottom-left-panel" id="blue"></div>
             <div  class="panel bottom-right-panel" id="red"></div>
         </div>
-    <!-- Popup de 'perdiste' que no sale porque dios me odia-->
+
+    <!-- Popup de 'perdiste'. ahora si lo arreglé XD me faltaba un div, que genia soy -->
+    <!-- Agregar porfa el boton de 'volver al menu' cuando lo hagas' -->
     <div id="losePopup" class="popup">
         <div class="losePopupContent">
             <span class="close" onclick="closePopup()">&times;</span>
-            <p>Perdiste el juego</p>
+            <p id="popupMessage">Perdiste el juego</p>
+            <button onclick="resetGame()">Volver a jugar</button>
+        </div>
     </div>
+
+    <!-- Boton de iniciar el juego. Este puede ser temporal tho, es para probar su funcionalidad -->
+    <button id="startGame" onclick="startGame()">Iniciar el juego</button>
+
+    <!-- Boton de reinicio dentro del juego -->
+    <button id="resetButton">Reiniciar Juego</button>
+
+    <!-- Contador de puntos y nivel. Quiero hacer que mientras mas se gana, mas se sumen puntitos pero eso no es aqui. nota mental ig -->
+    <h2>Puntos: <span id="score">0</span> | Nivel: <span id="level">1</span></h2>
 
     <!-- Import Script Js -->
     <script src="index.js"></script>
+
 </body>
 </html>
 
