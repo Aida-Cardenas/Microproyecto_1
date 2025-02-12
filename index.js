@@ -3,7 +3,7 @@ const topRight = document.getElementById('green');
 const bottomLeft = document.getElementById('blue');
 const bottomRight = document.getElementById('red');
 
-// Sacar un panel random
+// Obtener un panel aleatorio
 const getRandomPanel = () => {
     const panels = [
         topLeft, 
@@ -17,6 +17,7 @@ const getRandomPanel = () => {
 const sequence = [getRandomPanel()];
 let sequenceToGuess = [...sequence];
 
+//Iluminar panel
 const flash = (panel) => {
     return new Promise((resolve) => {
         panel.className += ' active';
@@ -24,18 +25,18 @@ const flash = (panel) => {
             panel.className = panel.className.replace(' active','');
             setTimeout(() => {
                 resolve();
-            }, 700);
+            }, 500);
         }, 700);
     });
 };
 
 const panelClicked = (panel) => {
     flash(panel);
-    const expectedPanel = sequenceToGuess.shift(); //panel que deberia clickear
-    // lógica del juego
+    const expectedPanel = sequenceToGuess.shift(); // Panel que deberia clickear
+    // Logica general del juego
     if (expectedPanel.id === panel.id) {
         if (sequenceToGuess.length === 0) {
-            // nueva ronda después de 2 segundos
+            // Nueva ronda despues de 2 segundos
             setTimeout(() => {
                 sequence.push(getRandomPanel());
                 sequenceToGuess = [...sequence];
@@ -43,11 +44,25 @@ const panelClicked = (panel) => {
             }, 2000); // Espera entre cada secuencia (dos segundos)
         }
     } else {
-        // perdiste
-        alert('perdiste :c');
+        // Mostrar popup "Perdiste el juego"
+        showPopup('Perdiste el juego');
     }
 };
 
+// Función para mostrar el popup "perdiste"
+const showPopup = (message) => {
+    const popup = document.getElementById('losePopup');
+    const popupContent = popup.querySelector('.losePopup-content p');
+    popupContent.textContent = message;
+    popup.style.display = 'block'; //Mostrar el popup
+};
+
+// Función para cerrar el popup "perdiste"
+function closePopup() {
+    document.getElementById('losePopup').style.display = 'none';
+};
+
+//Controlar si se puede clickear o no
 const startFlashing = async () => {
     canClick = false;
     for (const panel of sequence) {

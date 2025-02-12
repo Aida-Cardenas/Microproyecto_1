@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- Forma del juego. text-align para centrar el juego -->
-    <div style="text-align: center; margin-top: 30px;">
+    <div class="container" style= "text-align: center; margin-top: 5vh;">
         <div>
             <div  class="panel top-left-panel" id="yellow"></div>
             <div  class="panel top-right-panel" id="green"></div>
@@ -18,6 +18,13 @@
             <div  class="panel bottom-left-panel" id="blue"></div>
             <div  class="panel bottom-right-panel" id="red"></div>
         </div>
+    <!-- Popup de 'perdiste' que no sale porque dios me odia-->
+    <div id="losePopup" class="popup">
+        <div class="losePopupContent">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p>Perdiste el juego</p>
+    </div>
+
     <!-- Import Script Js -->
     <script src="index.js"></script>
 </body>

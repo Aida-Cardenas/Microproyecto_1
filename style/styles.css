@@ -5,10 +5,37 @@ body{
 
 /* Clase Panel. Si cambiamos el width y el height solamente lo hacemos aqui */
 .panel{
-    width: 200px;
-    height: 200px;
+    width: 25vw;
+    height: 25vw;
     display: inline-block;
     cursor: pointer;
+    margin: 0.5vw; /* espaciado de paneles*/
+};
+
+    /*Intento de fucking responsive ig*/
+    /* Telefonos*/
+    @media (max-width: 600px) {
+        .panel {
+          width: 40vw; 
+         height: 40vw;
+     }
+    }
+
+    /*Tabletas*/
+    @media (min-width: 601px) and (max-width: 1024px) {
+        .panel {
+            width: 30vw;
+            height: 30vw;
+        }
+    };
+
+/* paneles centrados o me mato! */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
 }
 
 .panel:hover{
@@ -35,4 +62,17 @@ body{
 /* Cambio de color para cuando se active el panel */
 .active{
     opacity: 0.4;
+}
+
+/* Popup de lose */
+.popup {
+    display: none; /* popup oculto inicialmente */
+}
+
+/*Wea temporal de lose configurar esto pls cuando sea que decida funcionar*/
+.losePopup-content {
+    background-color: #f7f8fa;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
