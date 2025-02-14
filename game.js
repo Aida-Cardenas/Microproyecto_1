@@ -54,7 +54,6 @@ const displayGameLeaderboard = () => {
         row.innerHTML = `
             <td>${entry.name}</td>
             <td>${entry.score}</td>
-            <td>${entry.level}</td>
         `;
         leaderboardContent.appendChild(row);
     });
@@ -66,15 +65,15 @@ const goToLandingPage = () => {
 };
 
 // Función para obtener un panel aleatorio
-constgetRandomPanel = () => {
+const getRandomPanel = () => {
     const panels = [topLeft, topRight, bottomLeft, bottomRight];
-    return panels[Math.floor(Math.random() * panels.length)];
+    return panels[parseInt(Math.random() * panels.length)];
 }
 
 // Función para iluminar un panel
 const flash = (panel) => {
     return new Promise((resolve) => {
-        playLightPanelSound(); // sonido iluminar panel
+        playLightPanelSound(); 
         panel.classList.add('active'); 
         setTimeout(() => {
             panel.classList.remove('active');
@@ -116,6 +115,16 @@ const showPopup = (message) => {
 // Función para cerrar el popup
 const closePopup = () => {
     document.getElementById('losePopup').style.display = 'none';
+};
+
+
+//Función para empezar la secuencia de paneles
+const startFlashing = async () => {
+    canClick = false;
+    for (const panel of sequence) {
+        await flash(panel);
+    }
+    canClick = true; 
 };
 
 // Función para empezar la secuencia de paneles

@@ -160,7 +160,7 @@ button:hover {
     background-color: #008f72;
 }
 
-/* Botón de reinicio centrado*/
+/* Botón de reinicio centrado*/ #TODO   
 #resetButton {
     display: block;
     align-self: center;
@@ -178,7 +178,7 @@ button:hover {
         }
     }
 
-/* Popup de "perdiste" */
+/* Popup de "perdiste" */ #TODO
 .popup {
     display: none; 
     position: fixed; 
