@@ -18,6 +18,10 @@ const losingSound = new Audio('sounds/losing_sound_effect.mp3');
 const lightPanelSound = new Audio('sounds/light_panel_sound.mp3');
 const clickPanelSound = new Audio('sounds/click_panel_sound.mp3');
 const backgroundMusic = new Audio('sounds/background_music.mp3');
+const lightGreensound = new Audio('sounds/green.mp3');
+const lightYellowsound = new Audio('sounds/yellow.mp3');
+const lightRedsound = new Audio('sounds/red.mp3');
+const lightBluesound = new Audio('sounds/blue.mp3');
 
 // Configurar la música de fondo para que se repita
 backgroundMusic.loop = true;
@@ -73,7 +77,24 @@ const getRandomPanel = () => {
 // Función para iluminar un panel
 const flash = (panel) => {
     return new Promise((resolve) => {
-        playLightPanelSound(); 
+        switch (panel.id) {
+            case 'green':
+                lightGreensound.currentTime = 0;
+                lightGreensound.play();
+                break;
+            case 'yellow':
+                lightYellowsound.currentTime = 0;
+                lightYellowsound.play();
+                break;
+            case 'red':
+                lightRedsound.currentTime = 0;
+                lightRedsound.play();
+                break;
+            case 'blue':
+                lightBluesound.currentTime = 0;
+                lightBluesound.play();
+                break;
+        }
         panel.classList.add('active'); 
         setTimeout(() => {
             panel.classList.remove('active');
@@ -85,7 +106,24 @@ const flash = (panel) => {
 // Función para mostrar popup del juego y llevar el puntaje, nivel, sonidos, etc
 const panelClicked = (panel) => {
     if (!canClick) return;
-    playClickPanelSound(); 
+    switch (panel.id) {
+        case 'green':
+            lightGreensound.currentTime = 0;
+            lightGreensound.play();
+            break;
+        case 'yellow':
+            lightYellowsound.currentTime = 0;
+            lightYellowsound.play();
+            break;
+        case 'red':
+            lightRedsound.currentTime = 0;
+            lightRedsound.play();
+            break;
+        case 'blue':
+            lightBluesound.currentTime = 0;
+            lightBluesound.play();
+            break;
+    }
     flash(panel);
     const expectedPanel = sequenceToGuess.shift();
 
