@@ -3,44 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Cambiar nombre del titulo -->
-    <title>Simon dice by Ricardo Baeta & Aida Cardenas seccion 3</title>
-    <link href="style/styles.css" rel="stylesheet"/>
+    <title>Simon Dice - Landing Page</title>
+    <link rel="stylesheet" href="style/styles.css">
 </head>
 <body>
-    <!-- Forma del juego. text-align para centrar el juego -->
-    <div class="container" style= "text-align: center; margin-top: 5vh;">
-        <div>
-            <div  class="panel top-left-panel" id="yellow"></div>
-            <div  class="panel top-right-panel" id="green"></div>
-        </div>
-        <div> 
-            <div  class="panel bottom-left-panel" id="blue"></div>
-            <div  class="panel bottom-right-panel" id="red"></div>
-        </div>
+    <!--Div que contiene el juego y leaderboard-->
+    <div class="landing-container">
+        <h1 id="titulo">Simon Dice</h1>
+        <form id="playerForm">
+            <label for="playerName">Ingresa tu nombre:</label>
+            <input type="text" id="playerName" required>
+            <button type="submit">Comenzar Juego</button>
+        </form>
+        <h2 id="leaderboard">Leaderboard (Top 5)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboardBody"></tbody>
+        </table>
 
-    <!-- Popup de 'perdiste'. ahora si lo arreglé XD me faltaba un div, que genia soy -->
-    <!-- Agregar porfa el boton de 'volver al menu' cuando lo hagas' -->
-    <div id="losePopup" class="popup">
-        <div class="losePopupContent">
-            <span class="close" onclick="closePopup()">&times;</span>
-            <p id="popupMessage">Perdiste el juego</p>
-            <button onclick="resetGame()">Volver a jugar</button>
-        </div>
     </div>
 
-    <!-- Boton de iniciar el juego. Este puede ser temporal tho, es para probar su funcionalidad -->
-    <button id="startGame" onclick="startGame()">Iniciar el juego</button>
-
-    <!-- Boton de reinicio dentro del juego -->
-    <button id="resetButton">Reiniciar Juego</button>
-
-    <!-- Contador de puntos y nivel. Quiero hacer que mientras mas se gana, mas se sumen puntitos pero eso no es aqui. nota mental ig -->
-    <h2>Puntos: <span id="score">0</span> | Nivel: <span id="level">1</span></h2>
-
-    <!-- Import Script Js -->
-    <script src="index.js"></script>
-
+    <!-- Link al js del landing -->
+    <script src="landing.js"></script>
+    
 </body>
 </html>
 
