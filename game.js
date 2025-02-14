@@ -77,7 +77,7 @@ const flash = (panel) => {
         panel.classList.add('active'); 
         setTimeout(() => {
             panel.classList.remove('active');
-            setTimeout(resolve, 300);
+            setTimeout(resolve, 350);
         }, 400);
     });
 };
