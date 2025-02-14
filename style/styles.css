@@ -87,15 +87,22 @@ h2#leaderboard {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     height: 100vh;
+    flex-direction: column;
 }
 
 /* Hover, Paneles del juego */
 .panel:hover{
-    border: 1px solid #f7f8fa; 
-    box-shadow: inset 0px 0px 0px 1px #f7f8fa;
-    box-sizing: border-box;
+    border: 2px solid #f7f8fa; 
+    box-shadow: 0 0 10px rgba(247, 248, 250, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Efecto de clic en los paneles */
+.panel:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
 }
 
 /* Colores de los paneles */
@@ -158,6 +165,14 @@ button {
 /* Hover del boton */
 button:hover {
     background-color: #008f72;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Efecto de clic en los botones */
+button:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
 }
 
 /* Botón de reinicio centrado*/ #TODO   
