@@ -160,6 +160,9 @@ button {
     font-family: 'Play';
     text-transform: uppercase; 
     font-weight: bold;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Hover del boton */
@@ -220,11 +223,11 @@ h2 {
     text-align: center;
     color: #f7f8fa;
     font-size: 16px;
-    margin: 10px 0;
+    margin: auto;
     max-width: 600px;
 }
 
-/* Estilo para la tabla de puntajes */
+/* Tabla de puntajes */
 table {
     width: 100%;
     max-width: 400px;
@@ -236,29 +239,50 @@ table {
     text-transform: uppercase;
 }
 
-/* Estilo para las celdas de la tabla */
+/* Celdas de la tabla */
 th, td {
-    padding: 10px;
+    padding: 15px;
     text-align: center;
     border-bottom: 1px solid #2e323a;
+    font-family: 'Play', sans-serif;
 }
 
-/* Estilo para la fila de encabezado de la tabla */
+/* Fila de encabezado de la tabla */
 th {
     background-color: #00d49d;
     color: #f7f8fa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
 }
 
-/* Estilo para el contenedor de la landing page */
+/* Filas impares de la tabla */
+tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+/* filas pares de la tabla */
+tr:nth-child(even) {
+    background-color: #e7e7e7;
+}
+
+/* Fila hover */
+tr:hover {
+    background-color: #d1d1d1;
+    transition: background-color 0.3s ease;
+}
+
+/* Contenedor de la landing page */
 .landing-container {
     text-align: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     height: 900px;
     align-items: center;
+    justify-content: center;
 }
 
-/* Estilo para el formulario del jugador */
+/* Formulario del jugador */
 #playerForm {
     display: flex;
     flex-direction: column;
@@ -271,13 +295,13 @@ th {
     text-align: center;
 }
 
-/* Estilo para la tabla de puntajes */
+/* Tabla de puntajes */
 #leaderboard {
     margin-top: 20px;
     color: #f7f8fa;
 }
 
-/*Estilo para el leaderboard en el juego */
+/* Leaderboard en el juego */
 #gameleaderboard {
     text-align: center;
     margin-top: 20px;
