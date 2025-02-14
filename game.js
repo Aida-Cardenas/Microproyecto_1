@@ -15,8 +15,6 @@ const levelDisplay = document.getElementById('level');
 
 // Sonidos
 const losingSound = new Audio('sounds/losing_sound_effect.mp3');
-const lightPanelSound = new Audio('sounds/light_panel_sound.mp3');
-const clickPanelSound = new Audio('sounds/click_panel_sound.mp3');
 const backgroundMusic = new Audio('sounds/background_music.mp3');
 const lightGreensound = new Audio('sounds/green.mp3');
 const lightYellowsound = new Audio('sounds/yellow.mp3');
@@ -29,14 +27,6 @@ backgroundMusic.loop = true;
 // Funciones para reproducir sonidos
 const playLosingSound = () => {
     losingSound.play();
-};
-
-const playLightPanelSound = () => {
-    lightPanelSound.play();
-};
-
-const playClickPanelSound = () => {
-    clickPanelSound.play();
 };
 
 const playBackgroundMusic = () => {
