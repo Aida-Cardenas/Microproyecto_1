@@ -1,4 +1,6 @@
-# Simon-Dice
-Juego de Simón Dice 
+# MICROPROYECTO 1
 
-Fecha: 13 / 02 / 2025
+Integrantes: Aida Cárdenas y Ricardo Baeta
+Sección 3
+
+
