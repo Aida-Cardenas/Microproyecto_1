@@ -8,8 +8,13 @@
 </head>
 <body>
 
+<div class="container_padre_juego">
+
+
     <!-- Div del Juego con atríbutos -->
     <div class="container" style= "text-align: center; margin-top: 5vh;">
+        <!-- Contador de Puntos y Nivel -->
+        <h2>Puntos: <span id="score">0</span> | Nivel: <span id="level">1</span></h2>
         <div>
             <div  class="panel top-left-panel" id="yellow"></div>
             <div  class="panel top-right-panel" id="green"></div>
@@ -25,19 +30,20 @@
         <div class="losePopupContent">
 
             <p id="popupMessage">Perdiste el juego</p>
-            <button onclick="resetGame()">Volver a jugar</button>
-            <button onclick="goToLandingPage()">Volver al Menú</button>
+            <button id="resetGamePopup" onclick="resetGame()">Volver a jugar</button>
+            <button id="landingGamePopup" onclick="goToLandingPage()">Volver al Menú</button>
         </div>
     </div>
-
+    <div class="container_botones"> 
     <!-- Botón de Iniciar el Juego -->
     <button id="startGame" onclick="startGame()">Iniciar el juego</button>
 
     <!-- Botón de Reinicio -->
     <button id="resetButton">Reiniciar Juego</button>
 
-    <!-- Contador de Puntos y Nivel -->
-    <h2>Puntos: <span id="score">0</span> | Nivel: <span id="level">1</span></h2>
+    <!-- Botón para volver a la landing page -->
+    <button id="backToLanding" onclick="goToLandingPage()">Volver al Menú</button>
+    </div>
 
     <!-- Leaderboard -->
     <div id="gameLeaderboard">
@@ -52,9 +58,7 @@
             <tbody id="leaderboardContent"></tbody>
         </table>
     </div>
-
-    <!-- Botón para volver a la landing page -->
-    <button id="backToLanding" onclick="goToLandingPage()">Volver al Menú</button>
+</div>
 
     <!-- Script del Juego -->
     <script src="game.js"></script>

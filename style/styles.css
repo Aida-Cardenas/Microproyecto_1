@@ -20,42 +20,164 @@ body {
     text-transform: uppercase;
     letter-spacing: 5px;
     font-size: 50px;
+    text-shadow: #f7f8fa 1px 0 10px;
 }
+            /* Título más pequeño en tablet */
+            @media (max-width: 768px) {
+            #titulo {
+                font-size: 40px;
+                line-height: 40px;
+                }
+            }
+            
+            /*Título - Teléfono*/
+            @media (max-width: 425px) {
+                #titulo {
+                    font-size: 28px;
+                }
+                }
+            @media (max-width: 320px) {
+                #titulo {
+                    font-size: 24px;
+                }                    
+            }            
 
 /* Etiqueta de texto */
 label {
-    color: white;
+    /* color: white; */
     margin-bottom: 15px;
+    font-family: 'Press Start 2P';
+    color: #e3eaf0;
 }
+            /*Label - Teléfono*/
+            @media (max-width: 425px) {
+                label {
+                    font-size: 14px;
+                }
+                }
 
 /* Formulario del jugador */
-form#playerForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-right: 10px;
-    padding-left: 10px;
-    font-size: 16px;
-    text-align: center;
-    text-align: center
-}
-
 /* Input del nombre del jugador */
 input#playerName {
-    padding: 10px 15px;
+    font-family: 'Play', cursive;
+    color: #00003c;
+    background-color: #e3eaf0;
+    border: 2px solid #296ce6;
+    padding: 15px 60px;
+    display: inline-block;
+    margin: 5px;
     text-align: center;
     font-size: 16px;
 }
+            @media (max-width: 425px) {
+                input#playerName {
+                    font-size: 14px;
+                    padding: 12px 24px;
+                }
+                }
+
+/*Container botones espaciado*/
+@media (max-width: 425px){
+    .container_botones {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+                
+
+/* Botones */
+button {
+    padding: 15px 20px;
+    font-size: 18px;
+    margin-top: 16px;
+    background-color: #0e4dbf;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Play';
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: #f7f8fa;
+    border: none;
+}
+                    @media (max-width: 425px) {
+                        button {
+                            font-size: 15px;
+                            padding: 14px 18px;
+                        }
+                        }
+        /*Botón de Comenzar juego*/
+        button#submitButton {
+            padding: 15px 20px;
+            font-size: 18px;
+        }
+                    /*Teléfono grande*/
+                    @media (max-width: 425px) {
+                        button#submitButton {
+                            font-size: 14px;
+                        }
+                        }
+
+        /* Botón de inicio */
+        button#startGame {
+            padding: 15px 31px;
+            font-size: 18px;
+        }
+                    /*Teléfono grande*/
+                    @media (max-width: 425px) {
+                        button#startGame {
+                            font-size: 14px;
+                        }
+                        }
+        /*Boton de reinicio*/
+        button#resetButton {
+            padding: 15px 31px;
+            font-size: 18px;
+        }
+                    /*Teléfono grande*/
+                    @media (max-width: 425px) {
+                        button#resetButton {
+                            font-size: 14px;
+                        }
+                        }        
+        /*Boton volver al menu*/
+        button#backToLanding {
+            padding: 15px 28px;
+            font-size: 18px;
+        }
+                    /*Teléfono grande*/
+                    @media (max-width: 425px) {
+                        button#backToLanding {
+                            font-size: 14px;
+                        }
+                        }
 
 /* Tabla de puntajes */
 h2#leaderboard {
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 18px;
-    font-family: 'Press Start 2P';
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-size: 20px;
+        font-family: 'Press Start 2P';
+        text-shadow: #f7f8fa 1px 0 10px;
 }
+            /*Teléfono grande*/
+            @media (max-width: 425px) {
+                h2#leaderboard {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+                }
+            /*Teléfono pequeño*/
+            @media (max-width: 320px) {
+                h2#leaderboard {
+                    font-size: 14px;
+                    line-height: 24px;
+                    letter-spacing: 2px;
+                }
+                }
 
 /* Clase para los paneles */
 .panel {
@@ -65,6 +187,37 @@ h2#leaderboard {
     cursor: pointer;
     margin: 0.32vw;
 }
+            /* Responsive para teléfonos */
+            @media (max-width: 600px) {
+                .panel {
+                    width: 40vw;
+                    height: 40vw;
+                }
+            }
+
+                /* Desactivar hover en teléfonos */
+                .panel:hover {
+                    border: none;
+                    box-shadow: none;
+                    transform: none;
+                }
+
+                /* Desactivar efecto de clic en teléfonos */
+                button {
+                    padding: 8px 16px;
+                    font-size: 14px;
+                }
+
+
+
+            /* Responsive para tablets */
+            @media (min-width: 601px) and (max-width: 1024px) {
+                /* Paneles más grandes en tablets */
+                .panel {
+                    width: 24vw;
+                    height: 24vw;
+                }
+            }
 
 /* Clase para el contenedor de los paneles */
 .container {
@@ -124,34 +277,40 @@ h2#leaderboard {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
+            @media (max-width: 425px) {
+                .popup {
+                    width: 150px;
+                }
+            }
+
+button#resetGamePopup {
+    padding: 10px 20px;
+    font-size: 18px;
+}
+            @media (max-width: 425px) {
+                button#resetGamePopup {
+                    font-size: 12px;
+                }
+            }
+
+button#landingGamePopup {
+    font-size: 18px;
+    padding: 10px 18px;
+}
+
+            @media (max-width: 425px) {
+                button#landingGamePopup {
+                    font-size: 12px;
+                }
+            }
 
 /* Contenido del popup */
 .losePopupContent {
     text-align: center;
 }
 
-/* Botones de inicio y reiniciar juego */
-button {
-    padding: 15px 20px;
-    font-size: 18px;
-    margin: 10px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #00d49d;
-    color: #f7f8fa;
-    transition: all 0.3s ease;
-    font-family: 'Play';
-    text-transform: uppercase;
-    font-weight: bold;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 /* Hover del boton */
 button:hover {
-    background-color: #008f72;
     transform: scale(1.05);
     transition: all 0.3s ease;
 }
@@ -162,24 +321,19 @@ button:active {
     transition: transform 0.1s ease;
 }
 
-/* Botón de reinicio centrado */
-#resetButton {
-    display: block;
-    align-self: center;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
 /* Contador de puntos */
 h2 {
+    font-family: 'Press Start 2P', sans-serif;
     text-align: center;
     color: #f7f8fa;
-    font-size: 16px;
-    margin: auto;
+    font-size: 14px;
     max-width: 600px;
 }
+            @media (max-width: 425px) {
+                h2 {
+                    font-size: 12px;
+                }
+            }
 
 /* Tabla de puntajes */
 table {
@@ -192,39 +346,67 @@ table {
     font-size: 16px;
     text-transform: uppercase;
 }
+        /* Celdas de la tabla */
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #2e323a;
+            font-family: 'Play', sans-serif;
+        }
 
-/* Celdas de la tabla */
-th, td {
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #2e323a;
-    font-family: 'Play', sans-serif;
-}
+        /* Encabezado de la tabla */
+        th {
+            background-color: #0e4dbf;
+            color: #f7f8fa;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
 
-/* Fila de encabezado de la tabla */
-th {
-    background-color: #00d49d;
-    color: #f7f8fa;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: bold;
-}
+        /* Filas impares de la tabla */
+        tr:nth-child(odd) {
+            background-color: #f1f1f1;
+        }
 
-/* Filas impares de la tabla */
-tr:nth-child(odd) {
-    background-color: #f1f1f1;
-}
+        /* filas pares de la tabla */
+        tr:nth-child(even) {
+            background-color: #e7e7e7;
+        }
 
-/* filas pares de la tabla */
-tr:nth-child(even) {
-    background-color: #e7e7e7;
-}
+        /* Fila hover */
+        tr:hover {
+            background-color: #d1d1d1;
+            transition: background-color 0.3s ease;
+        }
+            @media (max-width: 425px) {
+                table {
+                    max-width: 320px;
+                    color: #2e323a;
+                    font-size: 14px;
+                }
+                }
 
-/* Fila hover */
-tr:hover {
-    background-color: #d1d1d1;
-    transition: background-color 0.3s ease;
+            @media (max-width: 320px) {
+                table {
+                    max-width: 250px;
+                    color: #2e323a;
+                    font-size: 14px;
+                }
+                }
+
+/*Container padre del juego */
+.container_padre_juego {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80vh;
 }
+            @media (max-width: 984px) {
+                .container_padre_juego {
+                    flex-direction: column;
+                }
+            }
 
 /* Contenedor de la landing page */
 .landing-container {
@@ -262,37 +444,3 @@ tr:hover {
     color: #f7f8fa;
 }
 
-/* Responsive para teléfonos */
-@media (max-width: 600px) {
-    .panel {
-        width: 40vw;
-        height: 40vw;
-    }
-
-    /* Desactivar hover en teléfonos */
-    .panel:hover {
-        border: none;
-        box-shadow: none;
-        transform: none;
-    }
-
-    /* Desactivar efecto de clic en teléfonos */
-    button {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
-
-    /* Título más pequeño en teléfonos */
-    #titulo {
-        font-size: 30px;
-    }
-}
-
-/* Responsive para tablets */
-@media (min-width: 601px) and (max-width: 1024px) {
-    /* Paneles más grandes en tablets */
-    .panel {
-        width: 24vw;
-        height: 24vw;
-    }
-}
