@@ -208,8 +208,6 @@ h2#leaderboard {
                     font-size: 14px;
                 }
 
-
-
             /* Responsive para tablets */
             @media (min-width: 601px) and (max-width: 1024px) {
                 /* Paneles más grandes en tablets */
@@ -232,14 +230,17 @@ h2#leaderboard {
 .panel:hover {
     border: 2px solid #f7f8fa;
     box-shadow: 0 0 10px rgba(247, 248, 250, 0.5);
-    transform: scale(1.05);
-    transition: all 0.3s ease;
+    /*transform: scale(1.02);*/
+    /*transition: all 0.3s ease;*/
 }
 
 /* Efecto de clic en los paneles */
 .panel:active {
-    transform: scale(0.95);
+    transform: scale(0.98);
     transition: transform 0.1s ease;
+}
+.panel:not(:active) {
+    transform: none;
 }
 
 /* Colores de los paneles */
